@@ -30,11 +30,6 @@ DEBUG = str(os.environ.get('DEBUG')) == '1'
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
 
-print(BASE_DIR)
-print(SECRET_KEY)
-print(DEBUG)
-print(ALLOWED_HOSTS)
-
 
 # Application definition
 
