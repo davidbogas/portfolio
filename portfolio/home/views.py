@@ -19,6 +19,7 @@ def home(request):
         user_data = UserData.objects.get(active=True)
     else:
         user_data = UserData()
+        user_data.save()
 
     if Theme.objects.filter(active=True).exists():
         theme_object = Theme.objects.get(active=True)
