@@ -19,15 +19,12 @@ Some of the functionalities implemented:
 </p>
 
 <ul>
-    <li>Models for projects developed</li>
+    <li>Models for projects developed, skills, experience and education</li>
     <li>Models for contact info</li>
     <li>Color customization</li>
     <li>Responsive design</li>
+    <li>Support for english and spanish languages</li>
 </ul>
-
-<p>
-<strong>WORK IN PROGRESS</strong>
-</p>
 
 ## How to install
 
@@ -58,6 +55,10 @@ Also, check the paths set in the settings.py file for media and static files. Yo
 ```shell
 $ mkdir site site/public site/public/media site/public/static
 ```
+
+<p>
+Don't forget to run collectstatic and migrate commands.
+</p>
 
 ## Show your support
 

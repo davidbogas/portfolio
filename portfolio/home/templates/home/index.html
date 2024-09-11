@@ -1,10 +1,11 @@
 {% extends 'home/base.html' %}
 
 {% load static %}
+{% load i18n %}
 {% load custom_tags %}
 
 {% block title %}
-{{ user.name }} - {{ user.title }}
+{{ user_data.name }} - {{ user_data.title }}
 {% endblock %}
 
 {% block content %}
@@ -15,16 +16,19 @@
     <section id="hero" class="container">
         <div class="row w-100 flex-wrap-reverse">
             <div class="col">
-                <h1 id="name-header">{{ user.name }}</h1>
-                <h2 id="job-title">{{ user.title }}</h2>
-                {% if user.open_to_work %}
-                <div class="badge">Open to work</div>
+                <h1 id="name-header">{{ user_data.name }}</h1>
+                <h2 id="job-title">{{ user_data.title }}</h2>
+                {% if user_data.open_to_work %}
+                <div class="badge">{% translate 'Open to work' %}</div>
                 {% endif %}
-                <p id="bio">{{ user.bio|linebreaksbr }}</p>
+                {% if user_data.address %}
+                <p id="address">{{ address_icon|safe }} {{ user_data.address }}</p>
+                {% endif %}
+                <p id="bio">{{ user_data.bio|linebreaksbr }}</p>
             </div>
             <div id="avatar-box" class="col">
-                {% if user.profile_picture %}
-                <img src="{{ user.profile_picture.url }}" alt="avatar">
+                {% if user_data.profile_picture %}
+                <img src="{{ user_data.profile_picture.url }}" alt="avatar">
                 {% else %}
                 <img src="{% static 'images/blank-avatar.jpg' %}" alt="avatar">
                 {% endif %}
@@ -32,36 +36,45 @@
         </div>
         <div class="row">
             <div class="col">
-                {% if user.show_email %}
-                <a href="mailto:{{ user.email }}" target="_blank" class="btn btn-email" alt="Email me">{{ email_icon|safe }} Contact me</a>
+                {% if user_data.show_email %}
+                <a href="mailto:{{ user_data.email }}" target="_blank" class="btn btn-email" alt="{% translate 'Contact me' %}">{{ email_icon|safe }} {% translate 'Contact me' %}</a>
                 {% endif %}
-                {% if user.github %}
-                <a href="{{ user.github }}" target="_blank" class="btn" alt="GitHub">{{ github_icon|safe }}</a>
+                {% if user_data.github %}
+                <a href="{{ user_data.github }}" target="_blank" class="btn" alt="GitHub">{{ github_icon|safe }}</a>
                 {% endif %}
-                {% if user.linkedin %}
-                <a href="{{ user.linkedin }}" target="_blank" class="btn" alt="LinkedIn">{{ linkedin_icon|safe }}</a>
+                {% if user_data.linkedin %}
+                <a href="{{ user_data.linkedin }}" target="_blank" class="btn" alt="LinkedIn">{{ linkedin_icon|safe }}</a>
                 {% endif %}
-                {% if user.cv %}
-                <a href="{{ user.cv.url }}" target="_blank" class="btn" alt="CV">{{ cv_icon|safe }}</a>
+                {% if user_data.cv %}
+                <a href="{{ user_data.cv.url }}" target="_blank" class="btn" alt="CV">{{ cv_icon|safe }}</a>
                 {% endif %}
             </div>
         </div>
     </section>
-    <section id="experience" class="container">
-        <h2 class="section-title">Work experience</h2>
+    <section id="skills" class="container">
         <div class="row">
-            {% for experience in user.experience.all|dictsortreversed:"end_date" %}
+            {% for skill in user_data.skills.all %}
+            <div class="col skill-content-box">
+                {% svg skill.icon %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="experience" class="container">
+        <h2 class="section-title">{% translate 'Work experience' %}</h2>
+        <div class="row">
+            {% for experience in user_data.experience.all|dictsortreversed:"end_date" %}
             <div class="col section-content-box">
                 <h3>{{ experience.position }}</h3>
-                <p>{{ experience.start_date|date:"F Y"|capfirst }} - {{ experience.end_date|date:"F Y"|capfirst|default:"Present" }}</p>
+                <p>{{ experience.start_date|date:"F Y"|capfirst }} - {% if experience.end_date %}{{ experience.end_date|date:"F Y"|capfirst }}{% else %}{% translate 'Present' %}{% endif %}</p>
                 <p id="experience-description">{{ experience.description|linebreaksbr }}</p>
             </div>
             {% endfor %}
         </div>
     </section>
     <section id="projects" class="container">
-        <h2 class="section-title">Projects</h2>
-        {% for project in user.projects.all|dictsortreversed:"pk" %}
+        <h2 class="section-title">{% translate 'Projects' %}</h2>
+        {% for project in user_data.projects.all|dictsortreversed:"pk" %}
         <div class="row">
             <div class="col project-image-box">
                 {% if project.image %}
@@ -80,10 +93,10 @@
                 <p>{{ project.description }}</p>
                 <footer>
                     {% if project.link %}
-                    <a href="{{ project.link }}" target="_blank" class="btn btn-sm" alt="Preview Project">{{ link_icon|safe }} Preview</a>
+                    <a href="{{ project.link }}" target="_blank" class="btn btn-sm" alt="Preview Project">{{ link_icon|safe }} {% translate 'Preview' %}</a>
                     {% endif %}
                     {% if project.code %}
-                    <a href="{{ project.code }}" target="_blank" class="btn btn-sm" alt="View code on GitHub">{{ github_icon|safe }} Code</a>
+                    <a href="{{ project.code }}" target="_blank" class="btn btn-sm" alt="View code on GitHub">{{ github_icon|safe }} {% translate 'Code' %}</a>
                     {% endif %}
                 </footer>
             </div>
@@ -91,8 +104,8 @@
         {% endfor %}
     </section>
     <section id="education" class="container">
-        <h2 class="section-title">Education</h2>
-        {% for education in user.studies.all|dictsortreversed:"date" %}
+        <h2 class="section-title">{% translate 'Education' %}</h2>
+        {% for education in user_data.studies.all|dictsortreversed:"date" %}
         <div class="row">
             <div class="col education-icon-box">
                 <span class="education-icon">
@@ -109,7 +122,7 @@
                 <p>{{ education.date|date:"F Y"|capfirst }}</p>
                 <footer>
                     {% if education.link %}
-                    <a href="{{ education.link }}" target="_blank" class="btn btn-sm" alt="Go to certificate">{{ link_icon|safe }} View certificate</a>
+                    <a href="{{ education.link }}" target="_blank" class="btn btn-sm" alt="Go to certificate">{{ link_icon|safe }} {% translate 'View certificate' %}</a>
                     {% endif %}
                 </footer>
             </div>
@@ -121,23 +134,53 @@
     <div id="footer" class="container">
         <div class="row">
             <div class="col">
-                <p>Made with ❤️ by <a href="{{ user.website }}" target="_blank">{{ user.name }}</a></p>
+                <p>{% translate 'Made with ❤️ by' %} <a href="{{ user_data.website }}" target="_blank">{{ user_data.name }}</a></p>
             </div>
             <div class="col">
                 <ul>
-                    {% if user.github %}
+                    {% if user_data.github %}
                     <li>
-                        <a href="{{ user.github }}" target="_blank" alt="GitHub">GitHub</a>
+                        <a href="{{ user_data.github }}" target="_blank" alt="GitHub">GitHub</a>
                     </li>
                     {% endif %}
-                    {% if user.linkedin %}
+                    {% if user_data.linkedin %}
                     <li>
-                        <a href="{{ user.linkedin }}" target="_blank" alt="LinkedIn">LinkedIn</a>
+                        <a href="{{ user_data.linkedin }}" target="_blank" alt="LinkedIn">LinkedIn</a>
                     </li>
                     {% endif %}
-                    {% if user.show_email %}
+                    {% if user_data.twitter %}
                     <li>
-                        <a href="mailto:{{ user.email }}" target="_blank" alt="Email me">Contact me</a>
+                        <a href="{{ user_data.twitter }}" target="_blank" alt="Twitter">Twitter</a>
+                    </li>
+                    {% endif %}
+                    {% if user_data.instagram %}
+                    <li>
+                        <a href="{{ user_data.instagram }}" target="_blank" alt="Instagram">Instagram</a>
+                    </li>
+                    {% endif %}
+                    {% if user_data.youtube %}
+                    <li>
+                        <a href="{{ user_data.youtube }}" target="_blank" alt="YouTube">YouTube</a>
+                    </li>
+                    {% endif %}
+                    {% if user_data.dribbble %}
+                    <li>
+                        <a href="{{ user_data.dribbble }}" target="_blank" alt="Dribbble">Dribbble</a>
+                    </li>
+                    {% endif %}
+                    {% if user_data.behance %}
+                    <li>
+                        <a href="{{ user_data.behance }}" target="_blank" alt="Behance">Behance</a>
+                    </li>
+                    {% endif %}
+                    {% if user_data.twitch %}
+                    <li>
+                        <a href="{{ user_data.twitch }}" target="_blank" alt="Twitch">Twitch</a>
+                    </li>
+                    {% endif %}
+                    {% if user_data.show_email %}
+                    <li>
+                        <a href="mailto:{{ user_data.email }}" target="_blank" alt="{% translate 'Contact me' %}">{% translate 'Contact me' %}</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -145,4 +188,50 @@
         </div>
     </div>
 </footer>
+{% if user.is_authenticated %}
+<div id="theme-customizer">
+    <span>&#9998;</span>
+    <form action="{% url 'home:home' %}" method="post" id="theme-customizer-form">
+        {% csrf_token %}
+        <h2>Theme Customizer</h2>
+        <div>
+            <label for="primary-color">{% translate 'Primary color' %}:</label>
+            <input type="color" id="primary-color" name="primary-color" value="{{ theme_object.primary|default:'#f87934' }}">
+        </div>
+        <div>
+            <label for="secondary-color">{% translate 'Secondary color' %}:</label>
+            <input type="color" id="secondary-color" name="secondary-color" value="{{ theme_object.secondary|default:'#784bc2' }}">
+        </div>
+        <div>
+            <label for="background-color">{% translate 'Background color' %}:</label>
+            <input type="color" id="background-color" name="background-color" value="{{ theme_object.background|default:'#141820' }}">
+        </div>
+        <div>
+            <label for="theme-name">{% translate 'Theme name' %}:</label>
+            <input type="text" id="theme-name" name="theme-name" value="{{ theme_object.name|default:'' }}" placeholder="{% translate 'Theme name' %}" required>
+        </div>
+        <button type="submit">{% translate 'Save' %}</button>
+    </form>
+</div>
+{% endif %}
+<script>
+    const primaryColor = document.getElementById('primary-color');
+    const secondaryColor = document.getElementById('secondary-color');
+    const backgroundColor = document.getElementById('background-color');
+
+    primaryColor.addEventListener('change', function() {
+        const newPrimaryColor = primaryColor.value;
+        document.documentElement.style.setProperty('--primary-color', newPrimaryColor);
+    });
+
+    secondaryColor.addEventListener('change', function() {
+        const newSecondaryColor = secondaryColor.value;
+        document.documentElement.style.setProperty('--secondary-color', newSecondaryColor);
+    });
+
+    backgroundColor.addEventListener('change', function() {
+        const newBackgroundColor = backgroundColor.value;
+        document.documentElement.style.setProperty('--bg-color', newBackgroundColor);
+    });
+</script>
 {% endblock %}

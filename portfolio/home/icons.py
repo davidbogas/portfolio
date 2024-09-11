@@ -2,6 +2,11 @@ import os
 from django.conf import settings
 
 
+address_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/address-black-icon.svg')
+
+with open(address_svg_path, 'r') as svg_file:
+    address = svg_file.read()
+
 email_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/email-black-icon.svg')
 
 with open(email_svg_path, 'r') as svg_file:

@@ -1,0 +1,199 @@
+# DAVID BOGAS PORTFOLIO PROJECT.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-11 19:34+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: home/models.py:9 home/models.py:40 home/models.py:52 home/models.py:112
+msgid "Name"
+msgstr "Nombre"
+
+#: home/models.py:10 home/models.py:44
+msgid "Icon"
+msgstr "Icono"
+
+#: home/models.py:17
+msgid "Position"
+msgstr "Puesto"
+
+#: home/models.py:18
+msgid "Company"
+msgstr "Empresa"
+
+#: home/models.py:19 home/models.py:29
+msgid "Description"
+msgstr "Descripción"
+
+#: home/models.py:20
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#: home/models.py:21
+msgid "End date"
+msgstr "Fecha de finalización"
+
+#: home/models.py:28 home/models.py:53
+msgid "Title"
+msgstr "Título"
+
+#: home/models.py:30
+msgid "Image"
+msgstr "Imagen"
+
+#: home/models.py:31 home/models.py:74
+msgid "Skills"
+msgstr "Habilidades"
+
+#: home/models.py:32 home/models.py:43
+msgid "Link"
+msgstr "Enlace"
+
+#: home/models.py:33 home/templates/home/index.html:96
+msgid "Code"
+msgstr "Código"
+
+#: home/models.py:41
+msgid "Center"
+msgstr "Centro"
+
+#: home/models.py:42
+msgid "Date"
+msgstr "Fecha"
+
+#: home/models.py:54 home/templates/home/index.html:22
+msgid "Open to work"
+msgstr "Disponible para trabajar"
+
+#: home/models.py:55
+msgid "Address"
+msgstr "Dirección"
+
+#: home/models.py:56
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: home/models.py:57
+msgid "Show email"
+msgstr "Mostrar correo electrónico"
+
+#: home/models.py:58
+msgid "Profile picture"
+msgstr "Foto de perfil"
+
+#: home/models.py:59
+msgid "CV"
+msgstr "CV"
+
+#: home/models.py:62
+msgid "Website"
+msgstr "Página web"
+
+#: home/models.py:63
+msgid "GitHub"
+msgstr "GitHub"
+
+#: home/models.py:64
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: home/models.py:65
+msgid "Twitter"
+msgstr "Twitter"
+
+#: home/models.py:66
+msgid "Instagram"
+msgstr "Instagram"
+
+#: home/models.py:67
+msgid "YouTube"
+msgstr "YouTube"
+
+#: home/models.py:68
+msgid "Dribbble"
+msgstr "Dribbble"
+
+#: home/models.py:69
+msgid "Behance"
+msgstr "Behance"
+
+#: home/models.py:70
+msgid "Twitch"
+msgstr "Twitch"
+
+#: home/models.py:73
+msgid "Bio"
+msgstr "Bio"
+
+#: home/models.py:75
+msgid "Experience"
+msgstr "Experiencia"
+
+#: home/models.py:76 home/templates/home/index.html:73
+msgid "Projects"
+msgstr "Proyectos"
+
+#: home/models.py:77 home/templates/home/index.html:104
+msgid "Education"
+msgstr "Educación"
+
+#: home/models.py:79 home/models.py:116
+msgid "Active"
+msgstr "Activo"
+
+#: home/models.py:113 home/templates/home/index.html:195
+msgid "Primary color"
+msgstr "Color primario"
+
+#: home/models.py:114 home/templates/home/index.html:199
+msgid "Secondary color"
+msgstr "Color secundario"
+
+#: home/models.py:115 home/templates/home/index.html:203
+msgid "Background color"
+msgstr "Color de fondo"
+
+#: home/templates/home/base.html:5
+msgid "en"
+msgstr "es"
+
+#: home/templates/home/index.html:37 home/templates/home/index.html:180
+msgid "Contact me"
+msgstr "Contáctame"
+
+#: home/templates/home/index.html:61
+msgid "Work experience"
+msgstr "Experiencia laboral"
+
+#: home/templates/home/index.html:66
+msgid "Present"
+msgstr "Actualidad"
+
+#: home/templates/home/index.html:93
+msgid "Preview"
+msgstr "Ver"
+
+#: home/templates/home/index.html:122
+msgid "View certificate"
+msgstr "Ver certificado"
+
+#: home/templates/home/index.html:134
+msgid "Made with ❤️ by"
+msgstr "Hecho con ❤️ por"
+
+#: home/templates/home/index.html:207 home/templates/home/index.html:208
+msgid "Theme name"
+msgstr "Nombre del tema"
+
+#: home/templates/home/index.html:210
+msgid "Save"
+msgstr "Guardar"
