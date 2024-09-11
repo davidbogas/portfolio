@@ -15,7 +15,11 @@ def home(request):
         theme.save()
         return redirect('home:home')
 
-    user = UserData.objects.get(active=True)
+    if UserData.objects.filter(active=True).exists():
+        user_data = UserData.objects.get(active=True)
+    else:
+        user_data = UserData()
+
     if Theme.objects.filter(active=True).exists():
         theme_object = Theme.objects.get(active=True)
         theme = f"<style>:root{{--primary-color:{theme_object.primary};--secondary-color:{theme_object.secondary};--bg-color:{theme_object.background}}}</style>"
@@ -24,7 +28,7 @@ def home(request):
         theme_object = None
 
     context = {
-        'user_data': user,
+        'user_data': user_data,
         'address_icon': address,
         'email_icon': email,
         'github_icon': github,
