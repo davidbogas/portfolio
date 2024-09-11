@@ -1,15 +1,148 @@
 {% extends 'home/base.html' %}
 
+{% load static %}
+{% load custom_tags %}
+
+{% block title %}
+{{ user.name }} - {{ user.title }}
+{% endblock %}
+
 {% block content %}
 <header>
     <span id="gradient-bar"></span>
 </header>
 <main>
-    <section class="container">
-        <h1 class="text-center">Sitio web en construcción</h1>
+    <section id="hero" class="container">
+        <div class="row w-100 flex-wrap-reverse">
+            <div class="col">
+                <h1 id="name-header">{{ user.name }}</h1>
+                <h2 id="job-title">{{ user.title }}</h2>
+                {% if user.open_to_work %}
+                <div class="badge">Open to work</div>
+                {% endif %}
+                <p id="bio">{{ user.bio|linebreaksbr }}</p>
+            </div>
+            <div id="avatar-box" class="col">
+                {% if user.profile_picture %}
+                <img src="{{ user.profile_picture.url }}" alt="avatar">
+                {% else %}
+                <img src="{% static 'images/blank-avatar.jpg' %}" alt="avatar">
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if user.show_email %}
+                <a href="mailto:{{ user.email }}" target="_blank" class="btn btn-email" alt="Email me">{{ email_icon|safe }} Contact me</a>
+                {% endif %}
+                {% if user.github %}
+                <a href="{{ user.github }}" target="_blank" class="btn" alt="GitHub">{{ github_icon|safe }}</a>
+                {% endif %}
+                {% if user.linkedin %}
+                <a href="{{ user.linkedin }}" target="_blank" class="btn" alt="LinkedIn">{{ linkedin_icon|safe }}</a>
+                {% endif %}
+                {% if user.cv %}
+                <a href="{{ user.cv.url }}" target="_blank" class="btn" alt="CV">{{ cv_icon|safe }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <section id="experience" class="container">
+        <h2 class="section-title">Work experience</h2>
+        <div class="row">
+            {% for experience in user.experience.all|dictsortreversed:"end_date" %}
+            <div class="col section-content-box">
+                <h3>{{ experience.position }}</h3>
+                <p>{{ experience.start_date|date:"F Y"|capfirst }} - {{ experience.end_date|date:"F Y"|capfirst|default:"Present" }}</p>
+                <p id="experience-description">{{ experience.description|linebreaksbr }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section id="projects" class="container">
+        <h2 class="section-title">Projects</h2>
+        {% for project in user.projects.all|dictsortreversed:"pk" %}
+        <div class="row">
+            <div class="col project-image-box">
+                {% if project.image %}
+                <img src="{{ project.image.url }}" alt="project image">
+                {% else %}
+                <img src="{% static 'images/blank-image.jpg' %}" alt="project image">
+                {% endif %}
+            </div>
+            <div class="col section-content-box">
+                <h3>{{ project.title }}</h3>
+                <div>
+                    {% for skill in project.skills.all %}
+                    <span class="skill-badge">{% svg skill.icon %} {{ skill.name }}</span>
+                    {% endfor %}
+                </div>
+                <p>{{ project.description }}</p>
+                <footer>
+                    {% if project.link %}
+                    <a href="{{ project.link }}" target="_blank" class="btn btn-sm" alt="Preview Project">{{ link_icon|safe }} Preview</a>
+                    {% endif %}
+                    {% if project.code %}
+                    <a href="{{ project.code }}" target="_blank" class="btn btn-sm" alt="View code on GitHub">{{ github_icon|safe }} Code</a>
+                    {% endif %}
+                </footer>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+    <section id="education" class="container">
+        <h2 class="section-title">Education</h2>
+        {% for education in user.studies.all|dictsortreversed:"date" %}
+        <div class="row">
+            <div class="col education-icon-box">
+                <span class="education-icon">
+                    {% if education.icon %}
+                        {% svg education.icon %}
+                    {% else %}
+                        {{ building_icon|safe }}
+                    {% endif %}
+                </span>
+            </div>
+            <div class="col section-content-box">
+                <h3>{{ education.name }}</h3>
+                <h4>{{ education.center }}</h4>
+                <p>{{ education.date|date:"F Y"|capfirst }}</p>
+                <footer>
+                    {% if education.link %}
+                    <a href="{{ education.link }}" target="_blank" class="btn btn-sm" alt="Go to certificate">{{ link_icon|safe }} View certificate</a>
+                    {% endif %}
+                </footer>
+            </div>
+        </div>
+        {% endfor %}
     </section>
 </main>
 <footer>
-
+    <div id="footer" class="container">
+        <div class="row">
+            <div class="col">
+                <p>Made with ❤️ by <a href="{{ user.website }}" target="_blank">{{ user.name }}</a></p>
+            </div>
+            <div class="col">
+                <ul>
+                    {% if user.github %}
+                    <li>
+                        <a href="{{ user.github }}" target="_blank" alt="GitHub">GitHub</a>
+                    </li>
+                    {% endif %}
+                    {% if user.linkedin %}
+                    <li>
+                        <a href="{{ user.linkedin }}" target="_blank" alt="LinkedIn">LinkedIn</a>
+                    </li>
+                    {% endif %}
+                    {% if user.show_email %}
+                    <li>
+                        <a href="mailto:{{ user.email }}" target="_blank" alt="Email me">Contact me</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </footer>
 {% endblock %}
