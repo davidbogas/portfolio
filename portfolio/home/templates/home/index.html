@@ -62,15 +62,15 @@
     </section>
     <section id="experience" class="container">
         <h2 class="section-title">{% translate 'Work experience' %}</h2>
+        {% for experience in user_data.experience.all|dictsortreversed:"end_date" %}
         <div class="row">
-            {% for experience in user_data.experience.all|dictsortreversed:"end_date" %}
             <div class="col section-content-box">
                 <h3>{{ experience.position }}</h3>
                 <p>{{ experience.start_date|date:"F Y"|capfirst }} - {% if experience.end_date %}{{ experience.end_date|date:"F Y"|capfirst }}{% else %}{% translate 'Present' %}{% endif %}</p>
                 <p id="experience-description">{{ experience.description|linebreaksbr }}</p>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </section>
     <section id="projects" class="container">
         <h2 class="section-title">{% translate 'Projects' %}</h2>
