@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 19:34+0200\n"
+"POT-Creation-Date: 2024-09-12 13:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: home/models.py:9 home/models.py:40 home/models.py:52 home/models.py:112
 msgid "Name"
 msgstr "Nombre"
@@ -70,7 +71,7 @@ msgstr "Centro"
 msgid "Date"
 msgstr "Fecha"
 
-#: home/models.py:54 home/templates/home/index.html:22
+#: home/models.py:54 home/templates/home/index.html:19
 msgid "Open to work"
 msgstr "Disponible para trabajar"
 
@@ -150,23 +151,44 @@ msgstr "Educación"
 msgid "Active"
 msgstr "Activo"
 
-#: home/models.py:113 home/templates/home/index.html:195
+#: home/models.py:113 home/templates/home/index.html:137
 msgid "Primary color"
 msgstr "Color primario"
 
-#: home/models.py:114 home/templates/home/index.html:199
+#: home/models.py:114 home/templates/home/index.html:141
 msgid "Secondary color"
 msgstr "Color secundario"
 
-#: home/models.py:115 home/templates/home/index.html:203
+#: home/models.py:115 home/templates/home/index.html:145
 msgid "Background color"
 msgstr "Color de fondo"
+
+#: home/templates/403.html:7 home/templates/403.html:16
+msgid "Permission denied"
+msgstr "Permiso denegado"
+
+#: home/templates/403.html:17 home/templates/404.html:17
+#: home/templates/500.html:17
+msgid "Go to home"
+msgstr "Ir al inicio"
+
+#: home/templates/404.html:7 home/templates/404.html:16
+msgid "Page not found"
+msgstr "Página no encontrada"
+
+#: home/templates/500.html:7 home/templates/500.html:16
+msgid "Internal server error"
+msgstr "Error interno del servidor"
 
 #: home/templates/home/base.html:5
 msgid "en"
 msgstr "es"
 
-#: home/templates/home/index.html:37 home/templates/home/index.html:180
+#: home/templates/home/base.html:35
+msgid "Made with ❤️ by"
+msgstr "Hecho con ❤️ por"
+
+#: home/templates/home/base.html:81 home/templates/home/index.html:37
 msgid "Contact me"
 msgstr "Contáctame"
 
@@ -186,14 +208,14 @@ msgstr "Ver"
 msgid "View certificate"
 msgstr "Ver certificado"
 
-#: home/templates/home/index.html:134
-msgid "Made with ❤️ by"
-msgstr "Hecho con ❤️ por"
+#: home/templates/home/index.html:135
+msgid "Theme Customizer"
+msgstr "Cambiar Tema"
 
-#: home/templates/home/index.html:207 home/templates/home/index.html:208
+#: home/templates/home/index.html:149 home/templates/home/index.html:150
 msgid "Theme name"
 msgstr "Nombre del tema"
 
-#: home/templates/home/index.html:210
+#: home/templates/home/index.html:152
 msgid "Save"
 msgstr "Guardar"

@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+500 - {% translate 'Internal server error' %}
+{% endblock %}
+
+{% block content %}
+<main>
+    <section id="hero" class="container">
+        <div class="row w-100">
+            <div class="col">
+                <h1 id="name-header">500</h1>
+                <h2 id="job-title">{% translate 'Internal server error' %}</h2>
+                <a href="{% url 'home:home' %}">{% translate 'Go to home' %}</a>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
