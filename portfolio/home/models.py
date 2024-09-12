@@ -31,6 +31,7 @@ class Project(models.Model):
     skills = models.ManyToManyField(Skill, blank=True, verbose_name=_('Skills'))
     link = models.URLField(null=True, blank=True, verbose_name=_('Link'))
     code = models.URLField(null=True, blank=True, verbose_name=_('Code'))
+    date = models.DateField(verbose_name=_('Date'))
 
     def __str__(self):
         return self.title
