@@ -71,7 +71,7 @@
     </section>
     <section id="projects" class="container">
         <h2 class="section-title">{% translate 'Projects' %}</h2>
-        {% for project in user_data.projects.all|dictsortreversed:"pk" %}
+        {% for project in user_data.projects.all|dictsortreversed:"date" %}
         <div class="row hover-pop hidden">
             <div class="col project-image-box">
                 {% if project.image %}
