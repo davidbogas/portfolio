@@ -63,7 +63,7 @@
     <section id="experience" class="container">
         <h2 class="section-title">{% translate 'Work experience' %}</h2>
         {% for experience in user_data.experience.all|dictsortreversed:"end_date" %}
-        <div class="row">
+        <div class="row hover-pop hidden">
             <div class="col section-content-box">
                 <h3>{{ experience.position }}</h3>
                 <h4>{{ experience.start_date|date:"F Y"|capfirst }} - {% if experience.end_date %}{{ experience.end_date|date:"F Y"|capfirst }}{% else %}{% translate 'Present' %}{% endif %}</h4>
@@ -75,7 +75,7 @@
     <section id="projects" class="container">
         <h2 class="section-title">{% translate 'Projects' %}</h2>
         {% for project in user_data.projects.all|dictsortreversed:"pk" %}
-        <div class="row">
+        <div class="row hover-pop hidden">
             <div class="col project-image-box">
                 {% if project.image %}
                 <img src="{{ project.image.url }}" alt="project image">
@@ -106,7 +106,7 @@
     <section id="education" class="container">
         <h2 class="section-title">{% translate 'Education' %}</h2>
         {% for education in user_data.studies.all|dictsortreversed:"date" %}
-        <div class="row">
+        <div class="row hover-pop hidden">
             <div class="col education-icon-box">
                 <span class="education-icon">
                     {% if education.icon %}
@@ -233,5 +233,17 @@
         const newBackgroundColor = backgroundColor.value;
         document.documentElement.style.setProperty('--bg-color', newBackgroundColor);
     });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach(el => observer.observe(el));
 </script>
 {% endblock %}

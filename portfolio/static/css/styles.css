@@ -24,7 +24,7 @@
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
-  background-image: radial-gradient(circle at 50% 10%, hsl(from var(--bg-color) h s 80% / 5%) 10%, #00000000 60%);
+  background-image: radial-gradient(circle at 50% 0%, hsl(from var(--bg-color) h calc(s * .8) calc(l * 1.75)) 10%, var(--bg-color) 60%);
   margin: 0;
   min-height: 100vh;
 }
@@ -43,7 +43,7 @@ a {
 }
 
 a:hover {
-  color: hsl(from var(--primary-color) h s 70%);
+  color: hsl(from var(--primary-color) h s calc(l + 10%));
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,7 +78,7 @@ li {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  margin: 1.5rem 0;
+  padding: 1.5rem 1rem;
 }
 
 .col {
@@ -103,7 +103,7 @@ li {
   border-radius: 999px;
   color: var(--text-color);
   background-color: var(--bg-color);
-  transition: color .15s ease, background-color .15s ease;
+  transition: color .3s ease, background-color .3s ease;
 
   &:hover {
     color: var(--bg-color);
@@ -124,7 +124,7 @@ li {
     & path {
       fill: var(--text-color);
       color: var(--text-color);
-      transition: fill .15s ease;
+      transition: fill .3s ease;
     }
   }
 }
@@ -169,7 +169,6 @@ li {
 .skill-badge {
   display: inline-block;
   padding: .05rem .5rem;
-  /* border: 1px solid var(--secondary-color); */
   border-radius: 999px;
   font-size: .85rem;
   color: var(--text-color);
@@ -244,7 +243,6 @@ li {
 .education-icon {
   display: inline-block;
   padding: 1rem 1.25rem;
-  /* border: 1px solid var(--primary-color); */
   border-radius: 999px;
   font-size: .85rem;
   color: var(--text-color);
@@ -260,6 +258,25 @@ li {
       color: var(--text-color);
     }
   }
+}
+
+.hover-pop {
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: hsl(from var(--bg-color) h s calc(l * 2) / 30%);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transition: all .75s ease;
+  transform: translateY(2rem);
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #gradient-bar {
@@ -360,19 +377,21 @@ li {
   padding: 1rem 1rem 1rem 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 100;
-  transition: all .15s ease;
+  opacity: 0.3;
+  transition: all .3s ease;
 
   & > span {
     position: absolute;
     top: 45%;
-    left: 0.5rem;
-    font-size: 3rem;
+    left: 0.4rem;
+    font-size: 2.5rem;
     font-weight: 900;
     cursor: default;
   }
 
   &:hover, &:focus, &:focus-within {
     right: 0;
+    opacity: 1;
   }
 
   & a {
@@ -421,7 +440,7 @@ li {
     font-size: 1.1rem;
     color: #ffffff;
     background-color: #000000;
-    transition: all .15s ease;
+    transition: all .3s ease;
 
     &:hover {
       color: #ffffff;
