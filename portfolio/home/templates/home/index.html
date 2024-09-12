@@ -62,7 +62,7 @@
         {% for experience in user_data.experience.all|dictsortreversed:"end_date" %}
         <div class="row hover-pop hidden">
             <div class="col section-content-box">
-                <h3>{{ experience.position }}</h3>
+                <h3>{{ experience.position }} <span class="experience-company">{% translate 'at' %} {{ experience.company }}</span></h3>
                 <h4>{{ experience.start_date|date:"F Y"|capfirst }} - {% if experience.end_date %}{{ experience.end_date|date:"F Y"|capfirst }}{% else %}{% translate 'Present' %}{% endif %}</h4>
                 <p id="experience-description">{{ experience.description|linebreaksbr }}</p>
             </div>

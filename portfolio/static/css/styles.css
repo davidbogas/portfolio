@@ -219,6 +219,11 @@ li {
   }
 }
 
+.experience-company {
+  font-size: .85rem;
+  color: var(--text-color);
+}
+
 .project-image-box {
   max-width: 355px;
   align-self: center;

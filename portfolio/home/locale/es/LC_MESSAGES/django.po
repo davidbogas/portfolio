@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 13:22+0200\n"
+"POT-Creation-Date: 2024-09-12 16:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -195,6 +195,10 @@ msgstr "Contáctame"
 #: home/templates/home/index.html:61
 msgid "Work experience"
 msgstr "Experiencia laboral"
+
+#: home/templates/home/index.html:65
+msgid "at"
+msgstr "en"
 
 #: home/templates/home/index.html:66
 msgid "Present"
