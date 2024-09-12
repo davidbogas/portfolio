@@ -363,11 +363,11 @@ li {
 
 #theme-customizer {
   position: fixed;
-  top: 25%;
+  top: 30px;
   right: -200px;
   color: #000000;
   background-color: #ffffff;
-  height: 50%;
+  height: auto;
   width: 250px;
   border-radius: 12px 0 0 12px;
   display: flex;

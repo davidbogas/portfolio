@@ -213,7 +213,6 @@
         <button type="submit">{% translate 'Save' %}</button>
     </form>
 </div>
-{% endif %}
 <script>
     const primaryColor = document.getElementById('primary-color');
     const secondaryColor = document.getElementById('secondary-color');
@@ -233,7 +232,9 @@
         const newBackgroundColor = backgroundColor.value;
         document.documentElement.style.setProperty('--bg-color', newBackgroundColor);
     });
-
+</script>
+{% endif %}
+<script>
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
