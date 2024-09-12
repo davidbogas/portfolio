@@ -137,50 +137,50 @@
                 <p>{% translate 'Made with ❤️ by' %} <a href="{{ user_data.website }}" target="_blank">{{ user_data.name }}</a></p>
             </div>
             <div class="col">
-                <ul>
+                <ul class="footer-links">
                     {% if user_data.github %}
                     <li>
-                        <a href="{{ user_data.github }}" target="_blank" alt="GitHub">GitHub</a>
+                        <a href="{{ user_data.github }}" target="_blank" alt="GitHub">{{ github_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.linkedin %}
                     <li>
-                        <a href="{{ user_data.linkedin }}" target="_blank" alt="LinkedIn">LinkedIn</a>
+                        <a href="{{ user_data.linkedin }}" target="_blank" alt="LinkedIn">{{ linkedin_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.twitter %}
                     <li>
-                        <a href="{{ user_data.twitter }}" target="_blank" alt="Twitter">Twitter</a>
+                        <a href="{{ user_data.twitter }}" target="_blank" alt="Twitter">{{ twitter_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.instagram %}
                     <li>
-                        <a href="{{ user_data.instagram }}" target="_blank" alt="Instagram">Instagram</a>
+                        <a href="{{ user_data.instagram }}" target="_blank" alt="Instagram">{{ instagram_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.youtube %}
                     <li>
-                        <a href="{{ user_data.youtube }}" target="_blank" alt="YouTube">YouTube</a>
+                        <a href="{{ user_data.youtube }}" target="_blank" alt="YouTube">{{ youtube_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.dribbble %}
                     <li>
-                        <a href="{{ user_data.dribbble }}" target="_blank" alt="Dribbble">Dribbble</a>
+                        <a href="{{ user_data.dribbble }}" target="_blank" alt="Dribbble">{{ dribbble_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.behance %}
                     <li>
-                        <a href="{{ user_data.behance }}" target="_blank" alt="Behance">Behance</a>
+                        <a href="{{ user_data.behance }}" target="_blank" alt="Behance">{{ behance_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.twitch %}
                     <li>
-                        <a href="{{ user_data.twitch }}" target="_blank" alt="Twitch">Twitch</a>
+                        <a href="{{ user_data.twitch }}" target="_blank" alt="Twitch">{{ twitch_icon|safe }}</a>
                     </li>
                     {% endif %}
                     {% if user_data.show_email %}
                     <li>
-                        <a href="mailto:{{ user_data.email }}" target="_blank" alt="{% translate 'Contact me' %}">{% translate 'Contact me' %}</a>
+                        <a href="mailto:{{ user_data.email }}" target="_blank" alt="{% translate 'Contact me' %}">{{ email_icon|safe }}</a>
                     </li>
                     {% endif %}
                 </ul>

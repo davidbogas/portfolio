@@ -260,6 +260,30 @@ li {
   }
 }
 
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & svg {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    & path {
+      fill: var(--primary-color);
+      color: var(--primary-color);
+      transition: fill .3s ease;
+    }
+
+    &:hover path {
+      fill: var(--text-color);
+      color: var(--text-color);
+    }
+  }
+}
+
 .hover-pop {
   transition: all .3s ease;
 

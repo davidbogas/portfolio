@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import UserData, Theme
-from .icons import address, email, github, linkedin, link, building, cv
+from .icons import address, email, github, linkedin, twitter, instagram, youtube, dribbble, behance, twitch, link, building, cv
 
 
 def home(request):
@@ -34,6 +34,12 @@ def home(request):
         'email_icon': email,
         'github_icon': github,
         'linkedin_icon': linkedin,
+        'twitter_icon': twitter,
+        'instagram_icon': instagram,
+        'youtube_icon': youtube,
+        'dribbble_icon': dribbble,
+        'behance_icon': behance,
+        'twitch_icon': twitch,
         'cv_icon': cv,
         'link_icon': link,
         'building_icon': building,

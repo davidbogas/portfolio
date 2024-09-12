@@ -22,6 +22,36 @@ linkedin_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/linkedin-black-ico
 with open(linkedin_svg_path, 'r') as svg_file:
     linkedin = svg_file.read()
 
+twitter_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/x-black-icon.svg')
+
+with open(twitter_svg_path, 'r') as svg_file:
+    twitter = svg_file.read()
+
+instagram_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/instagram-black-icon.svg')
+
+with open(instagram_svg_path, 'r') as svg_file:
+    instagram = svg_file.read()
+
+youtube_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/youtube-black-icon.svg')
+
+with open(youtube_svg_path, 'r') as svg_file:
+    youtube = svg_file.read()
+
+dribbble_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/dribbble-black-icon.svg')
+
+with open(dribbble_svg_path, 'r') as svg_file:
+    dribbble = svg_file.read()
+
+behance_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/behance-black-icon.svg')
+
+with open(behance_svg_path, 'r') as svg_file:
+    behance = svg_file.read()
+
+twitch_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/twitch-black-icon.svg')
+
+with open(twitch_svg_path, 'r') as svg_file:
+    twitch = svg_file.read()
+
 cv_svg_path = os.path.join(settings.STATIC_ROOT, 'icons/cv-black-icon.svg')
 
 with open(cv_svg_path, 'r') as svg_file:
