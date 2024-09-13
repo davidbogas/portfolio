@@ -485,7 +485,11 @@ li {
 @media (prefers-color-scheme: light) {
   :root {
     --text-color: #213547;
-    --bg-color: #ffffff;
+    --bg-color: #ffffff !important;
+  }
+
+  .hover-pop:hover {
+    background-color: hsl(from var(--bg-color) h s calc(l / 2) / 30%);
   }
 }
 
