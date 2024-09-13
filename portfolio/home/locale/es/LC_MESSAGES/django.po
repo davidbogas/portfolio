@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-12 16:40+0200\n"
+"POT-Creation-Date: 2024-09-13 10:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: home/models.py:9 home/models.py:40 home/models.py:52 home/models.py:112
+#: home/models.py:9 home/models.py:41 home/models.py:53 home/models.py:113
 msgid "Name"
 msgstr "Nombre"
 
-#: home/models.py:10 home/models.py:44
+#: home/models.py:10 home/models.py:45
 msgid "Icon"
 msgstr "Icono"
 
@@ -43,7 +43,7 @@ msgstr "Fecha de inicio"
 msgid "End date"
 msgstr "Fecha de finalización"
 
-#: home/models.py:28 home/models.py:53
+#: home/models.py:28 home/models.py:54
 msgid "Title"
 msgstr "Título"
 
@@ -51,11 +51,11 @@ msgstr "Título"
 msgid "Image"
 msgstr "Imagen"
 
-#: home/models.py:31 home/models.py:74
+#: home/models.py:31 home/models.py:75
 msgid "Skills"
 msgstr "Habilidades"
 
-#: home/models.py:32 home/models.py:43
+#: home/models.py:32 home/models.py:44
 msgid "Link"
 msgstr "Enlace"
 
@@ -63,103 +63,103 @@ msgstr "Enlace"
 msgid "Code"
 msgstr "Código"
 
-#: home/models.py:41
-msgid "Center"
-msgstr "Centro"
-
-#: home/models.py:42
+#: home/models.py:34 home/models.py:43
 msgid "Date"
 msgstr "Fecha"
 
-#: home/models.py:54 home/templates/home/index.html:19
+#: home/models.py:42
+msgid "Center"
+msgstr "Centro"
+
+#: home/models.py:55 home/templates/home/index.html:19
 msgid "Open to work"
 msgstr "Disponible para trabajar"
 
-#: home/models.py:55
+#: home/models.py:56
 msgid "Address"
 msgstr "Dirección"
 
-#: home/models.py:56
+#: home/models.py:57
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: home/models.py:57
+#: home/models.py:58
 msgid "Show email"
 msgstr "Mostrar correo electrónico"
 
-#: home/models.py:58
+#: home/models.py:59
 msgid "Profile picture"
 msgstr "Foto de perfil"
 
-#: home/models.py:59
+#: home/models.py:60
 msgid "CV"
 msgstr "CV"
 
-#: home/models.py:62
+#: home/models.py:63
 msgid "Website"
 msgstr "Página web"
 
-#: home/models.py:63
+#: home/models.py:64
 msgid "GitHub"
 msgstr "GitHub"
 
-#: home/models.py:64
+#: home/models.py:65
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: home/models.py:65
+#: home/models.py:66
 msgid "Twitter"
 msgstr "Twitter"
 
-#: home/models.py:66
+#: home/models.py:67
 msgid "Instagram"
 msgstr "Instagram"
 
-#: home/models.py:67
+#: home/models.py:68
 msgid "YouTube"
 msgstr "YouTube"
 
-#: home/models.py:68
+#: home/models.py:69
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: home/models.py:69
+#: home/models.py:70
 msgid "Behance"
 msgstr "Behance"
 
-#: home/models.py:70
+#: home/models.py:71
 msgid "Twitch"
 msgstr "Twitch"
 
-#: home/models.py:73
+#: home/models.py:74
 msgid "Bio"
 msgstr "Bio"
 
-#: home/models.py:75
+#: home/models.py:76
 msgid "Experience"
 msgstr "Experiencia"
 
-#: home/models.py:76 home/templates/home/index.html:73
+#: home/models.py:77 home/templates/home/index.html:73
 msgid "Projects"
 msgstr "Proyectos"
 
-#: home/models.py:77 home/templates/home/index.html:104
+#: home/models.py:78 home/templates/home/index.html:104
 msgid "Education"
 msgstr "Educación"
 
-#: home/models.py:79 home/models.py:116
+#: home/models.py:80 home/models.py:117
 msgid "Active"
 msgstr "Activo"
 
-#: home/models.py:113 home/templates/home/index.html:137
+#: home/models.py:114 home/templates/home/index.html:137
 msgid "Primary color"
 msgstr "Color primario"
 
-#: home/models.py:114 home/templates/home/index.html:141
+#: home/models.py:115 home/templates/home/index.html:141
 msgid "Secondary color"
 msgstr "Color secundario"
 
-#: home/models.py:115 home/templates/home/index.html:145
+#: home/models.py:116
 msgid "Background color"
 msgstr "Color de fondo"
 
@@ -215,6 +215,10 @@ msgstr "Ver certificado"
 #: home/templates/home/index.html:135
 msgid "Theme Customizer"
 msgstr "Cambiar Tema"
+
+#: home/templates/home/index.html:145
+msgid "Background color (dark mode)"
+msgstr "Color de fondo (modo oscuro)"
 
 #: home/templates/home/index.html:149 home/templates/home/index.html:150
 msgid "Theme name"

@@ -270,11 +270,12 @@ li {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   & svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
 
     & path {
       fill: var(--primary-color);
@@ -388,14 +389,18 @@ li {
 
 #footer {
   padding-top: 5rem;
+
+  & > .row {
+    align-items: center;
+  }
 }
 
 #theme-customizer {
   position: fixed;
   top: 30px;
   right: -200px;
-  color: #000000;
-  background-color: #ffffff;
+  background-color: #00000033;
+  backdrop-filter: blur(5px);
   height: auto;
   width: 250px;
   border-radius: 12px 0 0 12px;
@@ -406,7 +411,6 @@ li {
   padding: 1rem 1rem 1rem 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 100;
-  opacity: 0.3;
   transition: all .3s ease;
 
   & > span {
@@ -420,7 +424,6 @@ li {
 
   &:hover, &:focus, &:focus-within {
     right: 0;
-    opacity: 1;
   }
 
   & a {
