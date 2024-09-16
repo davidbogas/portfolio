@@ -319,8 +319,9 @@ li {
 }
 
 #hero {
-  padding-top: 14rem;
-  padding-bottom: 6rem;
+  display: grid;
+  min-height: 80vh;
+  place-content: center;
 
   & > .row {
     flex-wrap: wrap-reverse;
