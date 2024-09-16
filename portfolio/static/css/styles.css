@@ -507,21 +507,8 @@ li {
     text-align: center;
   }
 
-  .row {
-    flex-direction: column;
-  }
-
   .col {
     flex: 0 0 100%;
-  }
-
-  #hero {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-
-    & > .row {
-      flex-direction: column-reverse;
-    }
   }
 
   #name-header {
