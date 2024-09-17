@@ -24,7 +24,7 @@
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
-  background-image: radial-gradient(circle at 50% 0%, hsl(from var(--bg-color) h calc(s * .8) calc(l * 1.75)) 10%, var(--bg-color) 60%);
+  background-image: radial-gradient(circle at 50% 0%, hsl(from var(--bg-color) h calc(s * .8) calc(l * 1.75)) 10%, var(--bg-color) 50%);
   margin: 0;
   min-height: 100vh;
 }
