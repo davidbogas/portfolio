@@ -11,7 +11,7 @@
   --bg-primary-color: hsl(from var(--primary-color) h s l / 20%);
   --bg-secondary-color: hsl(from var(--secondary-color) h s l / 20%);
 
-  font-family: 'Nunito Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Nunito Sans', 'Segoe UI', 'Roboto', 'Oxygen', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 300;
   color-scheme: light dark;
@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h3 {
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 li {
