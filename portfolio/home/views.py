@@ -15,6 +15,3 @@ def home(request):
         return redirect('home:home')
 
     return render(request, 'home/index.html')
-
-def prueba404(request):
-    return render(request, '500.html')
