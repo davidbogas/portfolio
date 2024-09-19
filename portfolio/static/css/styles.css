@@ -317,9 +317,10 @@ li {
 
 .education-icon {
   display: inline-block;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1rem;
   border-radius: 999px;
   font-size: .85rem;
+  line-height: 0;
   color: var(--text-color);
   background-color: var(--bg-primary-color);
 
