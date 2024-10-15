@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import UserData, Theme
+from .models import Theme
 
 
 def home(request):
