@@ -59,7 +59,7 @@
     </section>
     <section id="experience" class="container">
         <h2 class="section-title">{% translate 'Work experience' %}</h2>
-        {% for experience in user_data.experience.all|dictsortreversed:"end_date" %}
+        {% for experience in user_data.experience.all %}
         <div class="row hover-pop hidden">
             <div class="col section-content-box">
                 <h3>{{ experience.position }} <span class="experience-company">{% translate 'at' %} {{ experience.company }}</span></h3>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import F
 from django.core.validators import FileExtensionValidator
 from django.utils.translation import gettext_lazy as _
 from PIL import Image
@@ -22,6 +23,9 @@ class Experience(models.Model):
 
     def __str__(self):
         return self.position + ' - ' + self.company
+
+    class Meta:
+        ordering = [F('end_date').desc(nulls_first=True)]
 
 
 class Project(models.Model):
