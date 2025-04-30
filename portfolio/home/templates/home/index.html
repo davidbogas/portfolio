@@ -19,7 +19,7 @@
                 <div class="badge">{% translate 'Open to work' %}</div>
                 {% endif %}
                 {% if user_data.address %}
-                <p id="address">{{ address_icon|safe }} {{ user_data.address }}</p>
+                <p id="address">{{ address_icon|safe }}{{ user_data.address }}</p>
                 {% endif %}
                 <p id="bio">{{ user_data.bio|linebreaksbr }}</p>
             </div>

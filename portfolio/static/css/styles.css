@@ -386,11 +386,13 @@ li {
 
 #address {
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 #address > svg {
   display: inline-block;
-  vertical-align: middle;
   width: 1rem;
   height: 1rem;
 }
